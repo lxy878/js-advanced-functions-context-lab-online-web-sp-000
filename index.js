@@ -49,17 +49,26 @@ function wagesEarnedOnDate(date){
 
 function allWagesFor(){
   const allDates = this.timeOutEvents.map(timeOut => timeOut.date, []);
+<<<<<<< HEAD
   return allDates.reduce(function (sum, date){
     return sum + wagesEarnedOnDate.call(this, date)
   }.bind(this), 0);
+=======
+  return allDates.reduce((sum, date) => sum + wagesEarnedOnDate.call(this, date) , 0)
+>>>>>>> dbb4b96f2e14d8c2496c317083fa382fedec4ac4
 }
 
 function findEmployeeByFirstName(records, firstName){
   return records.find(record => record.firstName === firstName);
 }
 
+<<<<<<< HEAD
 function calculatePayroll(records){
   return records.reduce((sum, record) => sum+allWagesFor.call(record),0);
+=======
+function calculatePayroll(){
+  return records.reduce((sum, this) => sum+allWagesFor.call(this),0);
+>>>>>>> dbb4b96f2e14d8c2496c317083fa382fedec4ac4
 }
 
 
