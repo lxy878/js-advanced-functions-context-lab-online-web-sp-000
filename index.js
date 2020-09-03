@@ -50,7 +50,7 @@ function wagesEarnedOnDate(date){
 function allWagesFor(){
   const allDates = this.timeOutEvents.map(timeOut => timeOut.date, []);
 
-  return allDates.reduce((sum, date) => sum + wagesEarnedOnDate(this, date), 0);
+  return allDates.reduce((sum, date) => sum + wagesEarnedOnDate.call(this, date), 0);
 }
 
 function findEmployeeByFirstName(records, firstName){
